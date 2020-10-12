@@ -1,0 +1,20 @@
+{
+  "name": "unishare-api",
+  "version": "1.0.0",
+  "description": "API para consumo da aplicação UniShare",
+  "main": "index.js",
+  "author": "Robert Santos <robertsantosti@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
