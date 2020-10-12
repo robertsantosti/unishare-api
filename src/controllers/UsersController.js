@@ -1,6 +1,5 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { update, findByIdAndUpdate } = require('../models/User');
 
 module.exports = {
   /** GET METHODS */

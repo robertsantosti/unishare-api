@@ -1,4 +1,5 @@
 const Room = require("../models/Room");
+const User = require("../models/User");
 
 module.exports = {
   /** GET METHODS */
@@ -36,6 +37,7 @@ module.exports = {
       value,
       description,
       pictures,
+      user_id,
     } = request.body
 
     const data = {
@@ -45,6 +47,16 @@ module.exports = {
       value,
       description,
       pictures,
+      user_id,
+    }
+
+    const user = await User.findById(user_id);
+
+    if (user._id == user_id && user.type !== 2) {
+      return response.status(400).json({
+        message: `Quarto não pode ser cadastrado, usuário nao possui permissões de locador`,
+        data: null,
+      })
     }
 
     const room = await Room.create(data)
