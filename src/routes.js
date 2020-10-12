@@ -1,4 +1,5 @@
 const express = require('express');
+const RoomsController = require('./controllers/RoomsController');
 
 const UsersController = require("./controllers/UsersController")
 
@@ -13,15 +14,17 @@ routes.route('/users/:user_id')
   .get(UsersController.show)
   .put(UsersController.update)
   .delete(UsersController.destroy)
-/** Room Routes */
-// routes.route('rooms')
-//   .get()
-//   .post()
 
-// routes.route('rooms/:room_id')
-//   .get()
-//   .put()
-//   .delete()
+/** Quartos Routes */
+routes.route('/rooms')
+  .get(RoomsController.index)
+  .post(RoomsController.store)
+
+routes.route('/rooms/:room_id')
+  .get(RoomsController.show)
+  .put(RoomsController.update)
+  .delete(RoomsController.destroy)
+
 
 // routes.get('rooms/:room_id/status')
 
