@@ -24,4 +24,4 @@ app.use((request, response, next) => {
 app.use(express.json());
 app.use('/api', routes)
 
-app.listen(3333);
+app.listen(process.env.PORT);

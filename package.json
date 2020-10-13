@@ -6,7 +6,8 @@
   "author": "Robert Santos <robertsantosti@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
