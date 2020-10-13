@@ -1,8 +1,8 @@
 require('dotenv/config')
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
-
 const app = express();
 
 mongoose.connect(
@@ -13,6 +13,13 @@ mongoose.connect(
     useFindAndModify:false,
   }
 );
+
+app.use((request, response, next) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+  app.use(cors());
+  next();
+})
   
 app.use(express.json());
 app.use('/api', routes)
