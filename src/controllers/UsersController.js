@@ -13,7 +13,7 @@ module.exports = {
   },
 
   async show(request, response) {
-    const user = await User.findById(request.params.user_id, "_id name email birthdate avatar bio phone");
+    const user = await User.findById(request.params.user_id, "_id name email birthdate avatar liked bio phone");
 
     if (!user) {
       return response.status(404).json({
