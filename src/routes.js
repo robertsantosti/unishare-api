@@ -1,7 +1,7 @@
 const express = require('express');
 const AuthController = require('./controllers/AuthController');
+const LikeController = require('./controllers/LikeController');
 const RoomsController = require('./controllers/RoomsController');
-
 const UsersController = require("./controllers/UsersController")
 
 const routes = express();
@@ -33,7 +33,7 @@ routes.route('/rooms/:room_id')
 // routes.get('rooms/:room_id/status')
 
 /** Like Routes */
-// routes.route('rooms/:room_id/like')
-//   .post()
+routes.get('/rooms/:room_id/like', LikeController.store)
+routes.get('/rooms/:room_id/dislike', LikeController.delete)
 
 module.exports = routes;

@@ -31,6 +31,11 @@ const UserSchema = new mongoose.Schema({
   terms: {
     type:Boolean,
     default:true,
+  },
+  liked: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Room',
+    default: [],
   }
 }, {timestamps:true})
 
